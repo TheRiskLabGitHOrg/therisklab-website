@@ -418,6 +418,14 @@ footer .fbrand{display:flex;align-items:center;gap:10px;}
 /* Same lockup as the header — kept above the 110px digital minimum width (p.11) */
 footer .fbrand img{height:30px;width:auto;}
 footer small{color:var(--grey);font-size:12.5px;}
+footer .fnav{display:flex;flex-wrap:wrap;gap:8px 22px;}
+footer .fnav a{color:#cfcfcf;font-size:13px;}
+footer .fnav a:hover{color:var(--gold);}
+
+/* ---------- keyboard focus ----------
+   Visible outline for keyboard users only; mouse clicks don't show it. */
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px;}
+.btn:focus-visible{outline-offset:4px;}
 
 /* ---------- reveal ---------- */
 /* Pure-CSS fade-in on load. Deliberately does NOT depend on JavaScript running,

@@ -1,7 +1,8 @@
-/* Hero logo motion: the approved sturgeon swims in place, a gold sheen crosses
-   the wordmark, and every loop starts and ends on the untouched approved artwork. */
+/* Hero logo motion: the approved sturgeon swims off to the right, re-enters from
+   the left and settles back in place. Every loop starts and ends on the
+   untouched approved artwork. */
 (function () {
-  var LOOP = 9.0;            // seconds per cycle
+  var LOOP = 10.0;           // seconds per cycle
   var SWIM_PERIOD = 1.25;    // seconds per tail beat
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -25,8 +26,6 @@
 
   function start(svg) {
     var fish = svg.querySelector('[data-part="fish"]');
-    var sheen = svg.querySelector('[data-part="sheen"]');
-    var grad = svg.querySelector('linearGradient');
     if (!fish) return;
     var orig = fish.getAttribute('d'), segs = parse(orig);
     var xs = [], ys = [];
@@ -54,11 +53,11 @@
       var cy = Math.cos(m.yaw), sy = Math.sin(m.yaw), X3 = X * cy + Z2 * sy, Z3 = -X * sy + Z2 * cy;
       // 5. perspective projection
       var p = F / (F + Z3);
-      return [cxM + X3 * p, cyM + (Y2 + m.lift) * p];
+      return [cxM + X3 * p + (m.dx || 0), cyM + (Y2 + m.lift) * p];
     }
 
     function frame(m) {
-      if (!m || (m.swim < 1e-4 && m.turn < 1e-4)) { fish.setAttribute('d', orig); return; }
+      if (!m || (m.swim < 1e-4 && m.turn < 1e-4 && !m.dx)) { fish.setAttribute('d', orig); return; }
       var p = [];
       for (var s = 0; s < segs.length; s++) {
         var g = segs[s];
@@ -70,40 +69,46 @@
       fish.setAttribute('d', p.join(' '));
     }
 
-    function bell(u) { return u <= 0 || u >= 1 ? 0 : Math.pow(Math.sin(Math.PI * u), 2); }
+    // Travel distances, in the fish's own drawing units, measured against the
+    // viewport at the start of each loop so they follow window resizes.
+    var dxR = 0, dxL = 0;
+    function measure() {
+      var m = fish.getScreenCTM(); if (!m || !m.a) return;
+      // Edges of the hero section, which clips the fish (full width on the site).
+      var box = (svg.closest('section') || document.documentElement).getBoundingClientRect();
+      var pad = 0.25 * L;
+      dxR = (box.right - (m.a * xmin + m.e)) / m.a + pad;  // tail clears the right edge
+      dxL = (box.left - (m.a * xmax + m.e)) / m.a - pad;   // snout hidden past the left edge
+    }
+    var T0 = 1.3, T1 = 7.7;                           // travel window (s)
+    function travel(s) {
+      if (s <= T0 || s >= T1) return 0;
+      var D = dxR - dxL, tR = (T1 - T0) * dxR / D, tL = (T1 - T0) - tR;
+      if (s < T0 + tR) { var u = (s - T0) / tR; return dxR * u * u; }      // speed up, exit right
+      var v = (s - T0 - tR) / tL; return dxL * (1 - v) * (1 - v);          // enter left, slow to centre
+    }
     function motion(s) {
-      var swim = ease((s - 0.6) / 0.8) * (1 - ease((s - 5.6) / 0.9));
-      var u = (s - 1.6) / 3.6, turn = bell(u);
-      var arch = bell((s - 2.1) / 2.6);
-      return {
-        phi: 2 * Math.PI * (s - 0.6) / SWIM_PERIOD, swim: swim, turn: turn + arch,
-        yaw: 0.62 * turn * Math.sin(Math.PI * Math.min(1, Math.max(0, u)) * 1.0 + 0.3),
-        roll: 0.38 * turn,
-        curl: 0.55 * arch,
-        lift: -0.08 * L * arch
-      };
+      var swim = ease((s - 0.5) / 0.8) * (1 - ease((s - 7.3) / 1.0));
+      return { phi: 2 * Math.PI * (s - 0.5) / SWIM_PERIOD, swim: swim, turn: 0,
+               yaw: 0, roll: 0, curl: 0, lift: 0, dx: travel(s) };
     }
     function ease(u) { u = Math.max(0, Math.min(1, u)); return u * u * (3 - 2 * u); }
-    var t0 = null, raf = 0;
+    var t0 = null, raf = 0, lastLoop = -1;
 
     function tick(now) {
       if (t0 === null) t0 = now;
-      var s = ((now - t0) / 1000) % LOOP;
+      var el = (now - t0) / 1000, s = el % LOOP, n = Math.floor(el / LOOP);
+      if (n !== lastLoop) { lastLoop = n; measure(); }
       frame(motion(s));
-      if (grad) {
-        var u = (s - 6.4) / 1.3, on = u > 0 && u < 1;
-        sheen.style.opacity = on ? 1 : 0;
-        grad.setAttribute('gradientTransform', 'translate(' + (-0.75 + 1.5 * ease(u)).toFixed(4) + ' 0)');
-      }
       raf = requestAnimationFrame(tick);
     }
 
-    svg.trlReplay = function () { t0 = null; };
+    svg.trlReplay = function () { t0 = null; lastLoop = -1; };
     if (reduce) { frame(null); return; }
     raf = requestAnimationFrame(tick);
     document.addEventListener('visibilitychange', function () {
       if (document.hidden) { cancelAnimationFrame(raf); frame(null); }
-      else { t0 = null; raf = requestAnimationFrame(tick); }
+      else { t0 = null; lastLoop = -1; raf = requestAnimationFrame(tick); }
     });
   }
 

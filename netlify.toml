@@ -61,3 +61,16 @@
   for = "/script.js"
   [headers.values]
     Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Baseline security headers for every response. No Content-Security-Policy
+    # yet: the pages use inline scripts and Google Fonts, so a CSP needs its own
+    # tested round. frame-ancestors is set on its own to block framing.
+    Strict-Transport-Security = "max-age=31536000"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+    Content-Security-Policy = "frame-ancestors 'none'"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"

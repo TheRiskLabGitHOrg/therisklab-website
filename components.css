@@ -133,6 +133,20 @@
    the sturgeon icon height at the size in use): sturgeon is 68px at 420px
    -> 34px required, and 52px at 320px -> 26px required. */
 .hero-logo{width:100%;max-width:420px;margin:0 auto 40px;}
+/* The sturgeon swims off the right edge and back in from the left
+   (logo-motion.js); clip it to the hero so it never adds page scroll. */
+.hero{overflow:hidden;}
 @media (max-width:680px){
   .hero-logo{max-width:320px;margin:0 auto 30px;}
 }
+
+/* ---------- TESTIMONIAL CARDS: EQUAL GOLD BANDS ----------
+   Each card's three parts (gold band, highlight, quote) sit on rows shared
+   across the whole row of cards, so every gold band takes the height of the
+   tallest one and the highlights line up. Names stay top-aligned. */
+@supports (grid-template-rows: subgrid){
+  .testi-card{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0;}
+  .testi-head{align-items:flex-start;}
+}
+/* Names in black: the Guide allows pink as text only on dark backgrounds. */
+.testi-head .who b{color:var(--black);}
