@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | The Risk Lab</title>
-<meta name="description" content="An AI Native risk and control consultancy combining senior experience with the flexibility and direct attention of a small specialist team.">
+<title>About Us | Risk &amp; Internal Audit Team | The Risk Lab</title>
+<meta name="description" content="An AI-native risk and control consultancy combining senior experience with the flexibility and direct attention of a small specialist team.">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="The Risk Lab">
-<meta property="og:title" content="About | The Risk Lab">
-<meta property="og:description" content="An AI Native risk and control consultancy combining senior experience with the flexibility and direct attention of a small specialist team.">
+<meta property="og:title" content="About Us | Risk &amp; Internal Audit Team | The Risk Lab">
+<meta property="og:description" content="An AI-native risk and control consultancy combining senior experience with the flexibility and direct attention of a small specialist team.">
 <meta property="og:image" content="https://therisklab.ai/assets/og-image.jpg">
 <meta property="og:url" content="https://therisklab.ai/about.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About | The Risk Lab">
-<meta name="twitter:description" content="An AI Native risk and control consultancy combining senior experience with the flexibility and direct attention of a small specialist team.">
+<meta name="twitter:title" content="About Us | Risk &amp; Internal Audit Team | The Risk Lab">
+<meta name="twitter:description" content="An AI-native risk and control consultancy combining senior experience with the flexibility and direct attention of a small specialist team.">
 <meta name="twitter:image" content="https://therisklab.ai/assets/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="canonical" href="https://therisklab.ai/about.html">
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=7">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,6 +44,13 @@
   ]
 }
 </script>
+<style>/* team grid: four across on desktop, 2x2 on tablet, one column on phone */
+#team .team-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;}
+#team .team-info{padding:18px;}
+#team .team-info p{font-size:13.5px;}
+@media (max-width:1000px){#team .team-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:720px;margin:0 auto;}}
+@media (max-width:600px){#team .team-grid{grid-template-columns:1fr;max-width:400px;}}
+</style>
 </head>
 <body>
 
@@ -55,7 +62,7 @@
       <a class="nl" href="services.html" onclick="closeMenu()">Services</a>
       <a class="nl" href="clients.html" onclick="closeMenu()">Clients</a>
       <a class="nl" href="/insights/" onclick="closeMenu()">Insights</a>
-      <a class="btn" href="contact.html">Get in Touch</a>
+      <a class="btn" href="contact.html">Book a conversation</a>
     </div>
     <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">&#9776;</button>
   </nav>
@@ -65,57 +72,43 @@
   <div class="wrap">
     <span class="eyebrow">ABOUT</span>
     <h1>Big-company expertise, small-team attention.</h1>
-    <p>The Risk Lab is an AI Native risk and control consultancy. We combine senior risk, internal audit and commercial experience with the flexibility and direct attention of a small specialist team. Our work is focused on the issues that matter — we avoid unnecessary complexity, lengthy methodologies and recommendations that look good on paper but are difficult to implement.</p>
+    <p>The Risk Lab helps businesses find and fix the risk and control issues that matter. We combine senior risk, internal audit and commercial experience with the direct attention of a small, AI-native team. We avoid unnecessary complexity, lengthy methodologies and recommendations that look good on paper but don&rsquo;t work in practice.</p>
   </div>
 </section>
 
-<section id="about">
-  <div class="wrap about-grid">
-    <div class="reveal">
-      <div class="team-photo" style="max-width:340px;margin:0 auto;border-radius:16px;overflow:hidden;">
-        <img src="assets/robert.jpg" alt="Robert Sturgeon, Founder of The Risk Lab">
-      </div>
-    </div>
-    <div class="about-copy reveal">
-      <span class="eyebrow">MEET THE FOUNDER</span>
-      <h2 style="font-size:clamp(30px,4vw,44px);color:var(--gold);margin-bottom:2px;">Robert Sturgeon</h2>
-      <div class="role" style="margin-bottom:14px;">Founder and Lead Consultant</div>
-      <a href="https://www.linkedin.com/in/robert-sturgeon-9420739/" target="_blank" rel="noopener" class="linkedin-link">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7 0h3.83v2.05h.05c.53-1 1.85-2.05 3.8-2.05 4.07 0 4.82 2.68 4.82 6.16V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8z"/></svg>
-        Connect on LinkedIn
-      </a>
-      <p style="margin-top:18px;">Robert has over 15 years of experience helping businesses understand and manage operational, financial and fraud risks.</p>
-      <p>His background includes roles at Deloitte, MultiChoice and Naspers/Prosus, where he supported technology, media, fintech and marketplace businesses across the world with risk management.</p>
-      <p>He founded The Risk Lab to give clients direct access to experienced risk support without the layers and overheads of a large consulting firm. His approach is direct, commercially aware and focused on helping management solve problems — not merely documenting them.</p>
-      <div class="about-stats">
-        <div class="stat"><div class="num">15+</div><div class="label">Years Experience</div></div>
-        <div class="stat"><div class="num">14</div><div class="label">Countries Worked In</div></div>
-        <div class="stat"><div class="num">5.0</div><div class="label">Client Rating</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section style="background:var(--panel);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+<section id="team" style="background:var(--panel);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">THE TEAM</span>
-      <h2>Meet the Team</h2>
-      <p>The people behind The Risk Lab.</p>
+      <h2>Meet the team</h2>
     </div>
-    <div class="team-grid team-grid-2col reveal">
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="assets/robert.jpg" alt="Robert Sturgeon" loading="lazy">
+        </div>
+        <div class="team-info">
+          <h3>Robert Sturgeon</h3>
+          <div class="role">Founder and Lead Consultant</div>
+          <a href="https://www.linkedin.com/in/robert-sturgeon-9420739/" target="_blank" rel="noopener" class="linkedin-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7 0h3.83v2.05h.05c.53-1 1.85-2.05 3.8-2.05 4.07 0 4.82 2.68 4.82 6.16V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8z"/></svg>
+            Connect on LinkedIn
+          </a>
+          <p>Robert has more than 15 years of experience helping businesses manage operational, financial and fraud risk, including roles at Deloitte, MultiChoice and Naspers/Prosus across technology, media, fintech and marketplace businesses worldwide. He founded The Risk Lab to give clients direct access to senior risk expertise without the layers and overheads of a large consulting firm.</p>
+        </div>
+      </div>
       <div class="team-card">
         <div class="team-photo">
           <img src="assets/dineo.jpg" alt="Dineo Mnisi" loading="lazy">
         </div>
         <div class="team-info">
           <h3>Dineo Mnisi, CA(SA)</h3>
-          <div class="role">Finance and Risk Consultant</div>
+          <div class="role">Finance and Risk Specialist</div>
           <a href="https://www.linkedin.com/in/dineo-m-994006118/" target="_blank" rel="noopener" class="linkedin-link">
             <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7 0h3.83v2.05h.05c.53-1 1.85-2.05 3.8-2.05 4.07 0 4.82 2.68 4.82 6.16V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8z"/></svg>
             Connect on LinkedIn
           </a>
-          <p>Dineo brings more than six years of post-articles experience across corporate finance, accounting and consulting. At The Risk Lab, she supports finance-process reviews, data analysis and the development of practical financial controls. Her strong financial background enables her to understand complex processes quickly and translate financial, operational and control issues into clear and actionable recommendations.</p>
+          <p>Dineo brings more than six years of post-articles experience across corporate finance, accounting and consulting. At The Risk Lab, she supports finance-process reviews, data analysis and the development of practical financial controls. She is quick to understand complex processes and turns financial, operational and control issues into clear recommendations.</p>
         </div>
       </div>
       <div class="team-card">
@@ -124,12 +117,26 @@
         </div>
         <div class="team-info">
           <h3>Daniel van der Merwe</h3>
-          <div class="role">Senior Project Manager</div>
+          <div class="role">Head of Projects and Operations</div>
           <a href="https://www.linkedin.com/in/daniel-van-der-merwe-28ba3742b/" target="_blank" rel="noopener" class="linkedin-link">
             <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7 0h3.83v2.05h.05c.53-1 1.85-2.05 3.8-2.05 4.07 0 4.82 2.68 4.82 6.16V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8z"/></svg>
             Connect on LinkedIn
           </a>
-          <p>Daniel has more than 20 years of experience delivering complex projects across FMCG, construction and mining. He helps ensure Risk Lab engagements are well planned, efficiently managed and translated into clear, actionable outcomes. His practical project-management experience supports the successful coordination of stakeholders, deliverables and implementation activities.</p>
+          <p>Daniel has more than 20 years of experience delivering complex projects across FMCG, construction and mining. He leads projects and operations at The Risk Lab, keeping every engagement planned, on track and focused on clear outcomes. A mechanical engineer by training, he spent 20 years as a partner in an FMCG marketing business and most recently managed the build and launch of a mining skills centre in the DRC.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="assets/nicholaas.jpg" alt="Nicholaas Havenga" loading="lazy">
+        </div>
+        <div class="team-info">
+          <h3>Nicholaas Havenga</h3>
+          <div class="role">Head of Technology and Security</div>
+          <a href="https://www.linkedin.com/in/nicholaashavenga" target="_blank" rel="noopener" class="linkedin-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.48 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7 0h3.83v2.05h.05c.53-1 1.85-2.05 3.8-2.05 4.07 0 4.82 2.68 4.82 6.16V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V23h-4V8z"/></svg>
+            Connect on LinkedIn
+          </a>
+          <p>Nicholaas is a technology leader who works as a fractional and full-time CTO for startups and scale-ups across the Netherlands and Europe, with a focus on technology strategy, architecture and scaling. At The Risk Lab, he is responsible for how client data is handled across our tools and systems: who can access it, where it is stored and how it is protected. Clients can share sensitive information knowing it is kept secure and used only for their engagement.</p>
         </div>
       </div>
     </div>
@@ -139,7 +146,7 @@
 <section id="our-story" class="story-section">
   <div class="wrap">
     <div class="story-head reveal">
-      <h2>The story behind the sturgeon&hellip;</h2>
+      <h2>The story behind our logo</h2>
       <p class="story-strap">Built to endure. Driven to return. Designed to create value.</p>
     </div>
 
@@ -150,37 +157,22 @@
     </div>
 
     <div class="story-copy reveal">
-      <p>Long before it became our mark, the sturgeon had already mastered a demanding environment. Its fossil record runs back more than 120 million years, and some species live beyond a century. Built on cartilage rather than bone, much like sharks, it is slow to mature, resilient and made for the long term.</p>
-      <p>Many sturgeon move between sea and river. At the right time, they turn upstream, navigate resistance and return to freshwater to spawn. Salmon make that journey once and mostly die soon after; sturgeon survive it, move back downstream and return to do it again every few years, across a life measured in decades.</p>
-      <p>Their roe becomes caviar: something rare and valuable, created through patience, care and disciplined stewardship. Responsible aquaculture can produce this value while reducing reliance on vulnerable wild populations.</p>
+      <p>The sturgeon has outlasted more than 120 million years of change by being patient, resilient and built for the long term. It swims upstream against the current, comes back to do it again, and creates something rare and valuable along the way. That is how we approach risk management and internal audit: we look beneath the surface to find the risks that matter, work through the difficult issues with management, and build controls that keep creating value as the business grows.</p>
     </div>
-
     <div class="story-meaning reveal">
-      <span class="meaning-label">What it means for The Risk Lab</span>
-      <p>We help businesses move against complexity, strengthen what lies beneath the surface and turn disciplined risk and control work into enduring value.</p>
-      <p class="meaning-more" style="margin-top:14px;font-size:15px;"><a href="/insights/the-journey-becomes-the-brand/">Read: The journey becomes the brand &rarr;</a></p>
+      <p class="meaning-more" style="font-size:15px;"><a href="/insights/the-journey-becomes-the-brand/">Read: The journey becomes the brand &rarr;</a></p>
     </div>
 
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="callout-card reveal">
-      <span class="eyebrow">ENGAGEMENT MODEL</span>
-      <h3>Support that fits the need</h3>
-      <p>Engagements can be structured as focused projects or ongoing support, depending on the client's requirements. We work with organisations that need an independent review, help resolving a specific issue or access to experienced risk support without appointing a full-time senior resource.</p>
-    </div>
   </div>
 </section>
 
 <section class="cta">
   <div class="wrap">
-    <span class="eyebrow reveal">LET'S TALK</span>
-    <h2 class="reveal">Are you ready to level up?</h2>
-    <p class="reveal">Book a free consultation — no obligation, just a conversation about where your risks are.</p>
+    <span class="eyebrow reveal">LET&rsquo;S TALK</span>
+    <h2 class="reveal">Stronger risk management starts with a conversation.</h2>
+    <p class="reveal">An informal conversation to understand your business and explore where we can help you manage risk.</p>
     <div class="hero-ctas reveal">
-      <a class="btn pink" href="contact.html">Book an introductory conversation</a>
+      <a class="btn" href="contact.html">Book an introductory conversation</a>
     </div>
     <div class="cta-contacts reveal">
       <a href="tel:+27837098414">+27 83 709 8414</a>
@@ -193,14 +185,15 @@
   <div class="wrap">
     <a class="fbrand" href="/"><img src="assets/logo-horizontal.svg" alt="The Risk Lab"></a>
     <nav class="fnav" aria-label="Footer">
-      <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/clients.html">Clients</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="clients.html">Clients</a>
       <a href="/insights/">Insights</a>
-      <a href="/contact.html">Contact</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy</a>
       <a href="https://www.linkedin.com/company/the-risk-lab-ai/" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
-    <small>&copy; 2026 The Risk Lab. Risk management and internal audit.</small>
+    <small>&copy; 2026 The Risk Lab (Pty) Ltd</small>
   </div>
 </footer>
 

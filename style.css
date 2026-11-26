@@ -512,6 +512,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   }
   .nav-links.open{transform:translateY(0);}
   .nav-links .btn{width:100%;text-align:center;}
+  .nav-links{gap:6px;}
+  .nav-links a.nl{display:block;width:100%;text-align:center;padding:12px 0;}
   .menu-toggle{display:block;}
   section{padding:70px 0;}
   .cta-contacts{flex-direction:column;gap:12px;}
